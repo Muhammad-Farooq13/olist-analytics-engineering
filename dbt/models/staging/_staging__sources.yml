@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: raw
+    description: "Raw Olist e-commerce tables loaded by src/load_raw.py from the ingested CSVs."
+    tables:
+      - name: raw_orders
+        description: "One row per order: status and lifecycle timestamps."
+      - name: raw_order_items
+        description: "One row per line item within an order (product, seller, price, freight)."
+      - name: raw_customers
+        description: "One row per order-customer record (note: customer_id is order-scoped; customer_unique_id identifies the actual person)."
+      - name: raw_products
+        description: "One row per product: category and physical attributes."
+      - name: raw_payments
+        description: "One or more rows per order describing how it was paid."
+      - name: raw_category_translation
+        description: "Portuguese to English product category name mapping."

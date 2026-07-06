@@ -1,0 +1,23 @@
+source:
+  base_url: "https://raw.githubusercontent.com/wheff70/OlistDataAnalysis/master"
+  raw_dir: "data/raw"
+  files:
+    orders: "olist_orders_dataset.csv"
+    order_items: "olist_order_items_dataset.csv"
+    customers: "olist_customers_dataset.csv"
+    products: "olist_products_dataset.csv"
+    payments: "olist_order_payments_dataset.csv"
+    category_translation: "product_category_name_translation.csv"
+
+warehouse:
+  path: "artifacts/warehouse.duckdb"
+  raw_schema: "raw"
+
+dbt:
+  project_dir: "dbt"
+  profiles_dir: "dbt"
+
+metrics:
+  output_path: "artifacts/business_metrics.json"
+  revenue_chart_path: "artifacts/monthly_revenue.png"
+  category_chart_path: "artifacts/top_categories.png"

@@ -1,0 +1,66 @@
+version: 2
+
+models:
+  - name: dim_customers
+    description: "One row per unique customer (customer_unique_id)."
+    columns:
+      - name: customer_unique_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "One row per product with English category name."
+    columns:
+      - name: product_id
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_date
+    description: "Date spine covering the full range of order activity."
+    columns:
+      - name: date_day
+        tests:
+          - unique
+          - not_null
+
+  - name: fct_order_items
+    description: "One row per order line item — the central fact table."
+    columns:
+      - name: order_id
+        tests:
+          - not_null
+      - name: product_id
+        tests:
+          - not_null
+      - name: item_price
+        tests:
+          - not_null
+
+  - name: mart_monthly_revenue
+    description: "Revenue, order volume, and AOV by month, delivered orders only."
+    columns:
+      - name: order_month
+        tests:
+          - unique
+          - not_null
+      - name: total_revenue
+        tests:
+          - not_null
+
+  - name: mart_category_performance
+    description: "Revenue and volume by product category, delivered orders only."
+    columns:
+      - name: category
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_delivery_performance
+    description: "Delivery speed and on-time rate by customer state."
+    columns:
+      - name: customer_state
+        tests:
+          - unique
+          - not_null

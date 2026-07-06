@@ -1,0 +1,16 @@
+[project]
+name = "olist-analytics-engineering"
+version = "1.0.0"
+description = "Analytics engineering pipeline (dbt + DuckDB) over a real e-commerce dataset, with a Streamlit dashboard."
+authors = [{ name = "Muhammad Farooq Shafi", email = "mfarooqsgafee333@gmail.com" }]
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra -q"
+
+[build-system]
+requires = ["setuptools>=68.0"]
+build-backend = "setuptools.build_meta"

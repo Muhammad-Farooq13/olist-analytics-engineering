@@ -1,0 +1,38 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+
+# Virtual envs
+.venv/
+venv/
+env/
+
+# Testing
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+
+# Data & warehouse artifacts (regenerated via `make build`)
+data/raw/*.csv
+artifacts/*.duckdb
+artifacts/*.json
+artifacts/*.png
+
+# dbt
+dbt/target/
+dbt/logs/
+dbt/dbt_packages/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+
+# Env files
+.env
+*.env.local
